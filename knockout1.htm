@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+	<script src="https://knockoutjs.com/downloads/knockout-3.4.0.js"></script>
+    <link rel="stylesheet" href="knockout1.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<h2>Know the reasonability of Gold:</h2>
+		<p>Enter the price: <input data-bind='value:price'/></p>
+			<div data-bind = "visible:price()!=null">
+				<div data-bind = "visible:/^ *[0-9]+ *$/.test(price()) , text:priceRating , css:{expensive: price() >50 , cheap: price() <= 50}">
+				</div>
+				<div class="inputCheck" data-bind = "text: /^ *[0-9]+ *$/.test(price()) ? ' ' : 'Please enter a valid input'">
+				</div>
+			</div>
+		</div>
+</body>
+
+<script>
+	var viewModel = function(numb){
+		var self = this;
+		self.price = ko.observable(numb);
+
+		self.priceRating = ko.computed(function(){
+			return self.price() > 50 ? "Gold is expensive" : "Gold is cheap";
+		});
+	}
+
+	ko.applyBindings(new viewModel());
+
+</script>

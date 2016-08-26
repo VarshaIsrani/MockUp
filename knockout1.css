@@ -1,0 +1,33 @@
+.wrapper{
+  margin-left:20%;
+  width:550px;
+  height:500px;
+  background-color:lightgrey;
+}
+
+.wrapper h2{
+  text-align: center;
+}
+
+.wrapper p{
+  margin-left:20px;
+  font-size: 20px;
+}
+.wrapper input{
+  margin-top:25px;
+  width:40%;
+}
+.expensive{
+  margin-left:15px;
+  margin-top:10px;
+  color:red;
+}
+.cheap{
+  margin-left:15px;
+  margin-top:10px;
+  color:green;
+}
+
+.inputCheck{
+  margin-left:15px;
+}
